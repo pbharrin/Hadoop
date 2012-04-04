@@ -21,6 +21,9 @@ from hadoop.io import *
 def hadoopClassFromName(class_path):
     if class_path.startswith('org.apache.hadoop.'):
         class_path = class_path[11:]
+    # replace CC TextBytes with Hadoop Text
+    if class_path == 'org.commoncrawl.util.shared.TextBytes':
+        class_path = 'hadoop.io.Text'
     return classFromName(class_path)
 
 def hadoopClassName(class_type):
@@ -35,7 +38,7 @@ def classFromName(class_path):
     module_name, _, class_name = class_path.rpartition('.')
     if not module_name:
         raise ValueError('Class name must contain module part.')
-
+    print "the class path is: %s , module_name %s" % (class_path, module_name)
     module = __import__(module_name, globals(), locals(), [str(class_name)], -1)
     return getattr(module, class_name)
 
