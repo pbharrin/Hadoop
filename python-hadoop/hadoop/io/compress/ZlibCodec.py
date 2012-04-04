@@ -30,5 +30,4 @@ class ZlibCodec:
     def decompressInputStream(self, data):
         return DataInputBuffer(zlib.decompress(data))
 
-DefaultCodec = ZlibCodec
 
