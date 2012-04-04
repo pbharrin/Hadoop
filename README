@@ -1,3 +1,17 @@
-Hadoop Utils, Patch and Examples
+This Fork adds the Snappy compression Codec.
+In order to use snappy, first you should download the snappy C++ code: 
+http://code.google.com/p/snappy/
 
-http://hadoop.apache.org
+Next you need to build and install Snappy
+> tar xvf snappy-1.0.5.tar.gz
+> cd snappy-1.0.5
+> ./configure
+> sudo make install
+
+Next get the python Snappy library:
+
+http://pypi.python.org/pypi/python-snappy
+> tar xvf python-snappy-0.4
+> sudo python setup.py install
+
+Now you should be able to use the Hadoop library.  
