@@ -15,3 +15,5 @@ http://pypi.python.org/pypi/python-snappy
 > sudo python setup.py install
 
 Now you should be able to use the Hadoop library.  
+You will need to install the python-hadoop module like any Python module:
+> sudo python setup install 
